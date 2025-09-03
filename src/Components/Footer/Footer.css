@@ -92,7 +92,7 @@
   margin: 0 8px;
   width: 44px;
   height: 44px;
-  background-color: #a7d5f9;
+  background-color: #e93c3c;
   color: white;
   border-radius: 50%;
   font-size: 18px;
@@ -100,7 +100,7 @@
 }
 
 .social-icons a:hover {
-  background-color: #007bff;
+  background-color: #e93c3c;
 }
 
 .footer-links {
@@ -114,14 +114,14 @@
 }
 
 .footer-links li a {
-  color: #7ebeff;
+  color: #89090d;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s;
 }
 
 .footer-links li a:hover {
-  color: #0056b3;
+  color: #e93c3c;
 }
 
 .footer-copy {

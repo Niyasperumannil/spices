@@ -22,12 +22,12 @@ function Hero() {
       <HowItWorks />
       <BenefitsSection />
       <WatchBenefitsSection  />
-      <CollectionSection />
+      {/* <CollectionSection /> */}
       <OrderSection />
       <Reviews />
       <FaqSection />
-      <MobileAppSection />
-      <ContactSection />
+      {/* <MobileAppSection /> */}
+      {/* <ContactSection /> */}
       <Footer />
     </>
   )

@@ -57,7 +57,7 @@ const ProductSection = () => {
 
       <div className="product-image-container" ref={containerRef}>
         <img
-          src="/57114ea394a96284787fc8381f623410-removebg-preview.png"
+          src="/51xgLgvEypL._SX569_-removebg-preview.png"
           alt="Smartwatch"
           className="product-image"
         />

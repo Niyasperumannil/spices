@@ -34,7 +34,7 @@ const LogoOnlyHeader = () => {
         <div className="dropdown">
           <a href="#faq">PAGES</a>
         </div>
-        <a href="#contect">CONTACT</a>
+        <a href="#order">CONTACT</a>
       </nav>
 
       {/* CTA Button */}

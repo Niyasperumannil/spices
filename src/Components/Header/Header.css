@@ -53,7 +53,7 @@
 
 /* CTA button */
 .cta-button {
-  background-color: #ff6900;
+  background-color: #e93c3c;
   color: #fff;
   border: none;
   border-radius: 24px;
@@ -65,7 +65,7 @@
 }
 
 .cta-button:hover {
-  background-color: #e05c00;
+  background-color: #e93c3c;
   transform: translateY(-2px);
 }
 

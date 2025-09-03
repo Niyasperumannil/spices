@@ -42,15 +42,15 @@ const OrderSection = () => {
                   }
                   return prev;
                 });
-              }, index * 300); // stagger by 300ms per step
+              }, index * 300);
             });
-            observerInstance.disconnect(); // stop observing after animation triggers
+            observerInstance.disconnect();
           }
         });
       },
       {
         root: null,
-        threshold: 0.1, // trigger when 10% visible
+        threshold: 0.1,
       }
     );
 
@@ -62,7 +62,16 @@ const OrderSection = () => {
   }, []);
 
   return (
-    <section className="order-section" ref={sectionRef}>
+    <section className="order-section" ref={sectionRef} id="order">
+      {/* 🟢 Image first (left side) */}
+      <div className="order-image">
+        <img
+          src="/51xgLgvEypL._SX569_-removebg-preview.png"
+          alt="Order via WhatsApp"
+        />
+      </div>
+
+      {/* 🟢 Content second (right side) */}
       <div className="order-content">
         <h2 className="order-title">HOW TO ORDER</h2>
         <p className="order-subtitle">
@@ -90,13 +99,6 @@ const OrderSection = () => {
         >
           Order on WhatsApp
         </a>
-      </div>
-
-      <div className="order-image">
-        <img
-          src="/57114ea394a96284787fc8381f623410-removebg-preview.png"
-          alt="Order via WhatsApp"
-        />
       </div>
     </section>
   );

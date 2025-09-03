@@ -7,33 +7,44 @@
 
 .reviews-title {
   font-size: 48px;
-  color: #333;
   font-weight: 700;
-  margin-bottom: 10px;
+  color: #222;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.underline-accent {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #007bff, #25d366);
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
 }
 
 .reviews-subtitle {
   font-size: 20px;
-  color: #999;
-  max-width: 600px;
+  color: #777;
+  max-width: 700px;
   margin: 0 auto 50px auto;
   line-height: 1.6;
 }
 
 .review-cards {
   display: flex;
-  justify-content: space-around;
-  gap: 40px;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
-/* Initial hidden state */
 .review-card {
-  background: transparent;
-  max-width: 350px;
-  flex: 1;
-  padding: 20px;
-  text-align: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  max-width: 340px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   opacity: 0;
   transform: translateY(20px);
@@ -42,9 +53,13 @@
   animation-duration: 0.6s;
 }
 
-/* Visible state triggers animation */
 .review-card.visible {
   animation-name: fadeSlideUp;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 @keyframes fadeSlideUp {
@@ -65,60 +80,76 @@
   color: #444;
   line-height: 1.6;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #e93c3c;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
 
 .review-author {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  color: #888;
+  color: #e93c3c;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 /* Tablet responsiveness */
-@media (max-width: 768px) {
-  .review-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .review-card {
-    max-width: 90%;
-    margin-bottom: 30px;
+@media (max-width: 1024px) {
+  .reviews-section {
+    padding: 50px 40px;
   }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 600px) {
-  .reviews-section {
-    padding: 40px 20px;
-  }
-
   .reviews-title {
     font-size: 32px;
   }
 
   .reviews-subtitle {
     font-size: 16px;
-    max-width: 100%;
     margin-bottom: 30px;
   }
 
   .review-card {
-    padding: 10px 15px;
+    padding: 20px 15px;
+    max-width: 90%;
   }
 
   .quote {
     font-size: 40px;
-    margin-bottom: 10px;
   }
 
   .review-text {
     font-size: 16px;
-    margin-bottom: 20px;
   }
 
   .review-author {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
     font-size: 16px;
   }
 }

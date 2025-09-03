@@ -36,13 +36,13 @@ function App() {
   return (
     <div className={`hero ${inView ? "visible" : ""}`} ref={heroRef}>
       <div className="hero-text">
-        <h2 className="fade-item delay-1">
+        {/* <h2 className="fade-item delay-1">
           When Spices Tell Stories: The Legacy of Bottle Masala
-        </h2>
+        </h2> */}
         <div className="button-container">
-          <button className="play-button fade-item delay-2">
+          {/* <button className="play-button fade-item delay-2">
             <span className="play-icon">▶</span> Video
-          </button>
+          </button> */}
           {isMobile && (
             <button className="pre-order-button fade-item delay-3">
               Pre-order Now

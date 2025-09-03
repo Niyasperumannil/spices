@@ -1,5 +1,5 @@
 .watch-features {
-  padding: 30px 200px;
+  padding: 1px 200px;
   font-family: "Arial", sans-serif;
   background: #f9f9f9;
 }
@@ -36,7 +36,7 @@
 
 .feature-icon {
   font-size: 50px;
-  color: #007bff;
+  color: #e93c3c;
   flex-shrink: 0;
   margin-top: 29px;
 }
@@ -63,7 +63,7 @@
 }
 
 .watch-img {
-  max-width: 380px;
+  max-width: 440px;
   height: auto;
 }
 
