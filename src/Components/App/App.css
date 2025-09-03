@@ -9,7 +9,7 @@ body {
 
 .hero {
   text-align: center;
-  padding: 110px 30px;
+  padding: 120px 30px;
   background-color: white;
   position: relative;
 }
@@ -40,7 +40,7 @@ body {
 .hero-text h2 {
   max-width: 1000px;
   margin: 0 auto 20px;
-  font-size: 24px;
+  font-size: 30px;
   line-height: 1.6;
   color: #333;
   font-weight: 600;
