@@ -22,31 +22,35 @@
   margin-right: auto;
 }
 
-.collection-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0px;
-  justify-items: center;
+.collection-grid-wrapper {
+  position: relative;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Initial hidden state for animation */
+.collection-grid.carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  transition: opacity 0.5s ease;
+}
+
+.collection-grid.carousel.mobile {
+  grid-template-columns: 1fr;
+  max-width: 300px;
+}
+
 .collection-card {
   background: #f9fbff;
   border-radius: 12px;
-  padding: 30px 70px 0px;
+  padding: 30px 30px 0px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* Animation initial state */
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* Visible state */
-.collection-card.visible {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .collection-card:hover {
@@ -97,11 +101,36 @@
   color: #007bff;
 }
 
-/* ✅ Tablet */
+/* Scroll buttons */
+.scroll-icon-btn {
+  background-color: rgba(0, 123, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  color: #007bff;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.scroll-icon-btn:hover {
+  background-color: rgba(0, 123, 255, 0.3);
+}
+
+.scroll-icon-btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .collection-grid {
+  .collection-grid.carousel {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    max-width: 600px;
   }
 
   .collection-title {
@@ -117,28 +146,18 @@
   }
 }
 
-/* ✅ Mobile (Marquee Effect) */
+/* Mobile - handled in JS with class */
 @media (max-width: 600px) {
   .collection-section {
     padding: 40px 10px;
   }
 
-  .collection-grid {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    animation: marquee 20s linear infinite;
-  }
-
-  .collection-grid::-webkit-scrollbar {
-    display: none; /* hide scrollbar */
+  .collection-grid-wrapper {
+    padding: 0 10px;
   }
 
   .collection-card {
     padding: 20px 20px;
-    min-width: 250px;
   }
 
   .collection-title {
@@ -160,15 +179,5 @@
 
   .product-price {
     font-size: 18px;
-  }
-}
-
-/* ✅ Keyframes for auto-scroll marquee */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }
