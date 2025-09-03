@@ -118,7 +118,7 @@ const WatchFeatures = () => {
         {/* Center Product Image */}
         <div className="watch-display">
           <img
-            src="public/57114ea394a96284787fc8381f623410-removebg-preview.png"
+            src="/57114ea394a96284787fc8381f623410-removebg-preview.png"
             alt="Masala Product"
             className="watch-img"
           />
