@@ -1,0 +1,60 @@
+import React, { useRef, useEffect, useState } from 'react';
+import './Footer.css';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaYoutube,
+  FaGooglePlusG,
+  FaPinterestP
+} from 'react-icons/fa';
+
+const Footer = () => {
+  const footerRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); // only once
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <footer className={`footer ${visible ? 'visible' : ''}`} ref={footerRef}>
+      <div className="social-icons">
+        <a href="#"><FaFacebookF /></a>
+        <a href="#"><FaTwitter /></a>
+        <a href="#"><FaLinkedinIn /></a>
+        <a href="#"><FaYoutube /></a>
+        <a href="#"><FaGooglePlusG /></a>
+        <a href="#"><FaPinterestP /></a>
+      </div>
+
+      <ul className="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Mobile App</a></li>
+        <li><a href="#">PressKit</a></li>
+      </ul>
+
+      <p className="footer-copy">
+        Copyright © {new Date().getFullYear()} Proland. All rights reserved
+      </p>
+    </footer>
+  );
+};
+
+export default Footer;

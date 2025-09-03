@@ -1,0 +1,118 @@
+.mobile-app-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 200px;
+  color: rgb(0, 0, 0);
+  font-family: "Arial", sans-serif;
+  flex-wrap: wrap;
+}
+
+/* Initial hidden state */
+.app-image,
+.app-title,
+.app-description,
+.app-buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;
+  animation-name: none;
+}
+
+/* When visible, trigger animation */
+.app-image.visible {
+  animation-name: fadeSlideUp;
+  animation-delay: 0.2s;
+}
+
+.app-title.visible {
+  animation-name: fadeSlideUp;
+  animation-delay: 0.4s;
+}
+
+.app-description.visible {
+  animation-name: fadeSlideUp;
+  animation-delay: 0.6s;
+}
+
+.app-buttons.visible {
+  animation-name: fadeSlideUp;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.app-content {
+  max-width: 50%;
+}
+
+.app-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.app-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #030202;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.store-button img.social-icon {
+  height: 55px;
+  width: 55px;
+  border-radius: 12px;
+  background: white;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.store-button img:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ Responsive */
+@media (max-width: 900px) {
+  .mobile-app-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .app-content {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .app-title {
+    font-size: 36px;
+  }
+
+  .app-description {
+    font-size: 16px;
+  }
+
+  .app-buttons {
+    justify-content: center;
+  }
+}
