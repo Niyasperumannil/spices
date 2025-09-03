@@ -7,28 +7,28 @@ const products = [
     name: "Turmeric Powder",
     description: "Pure ground turmeric with rich aroma",
     price: "₹120 / 200g",
-    image: "public/57114ea394a96284787fc8381f623410-removebg-preview.png",
+    image: "/57114ea394a96284787fc8381f623410-removebg-preview.png",
   },
   {
     id: 2,
     name: "Red Chilli Powder",
     description: "Fiery and authentic Indian red chillies",
     price: "₹150 / 200g",
-    image: "public/57114ea394a96284787fc8381f623410-removebg-preview.png",
+    image: "/57114ea394a96284787fc8381f623410-removebg-preview.png",
   },
   {
     id: 3,
     name: "Coriander Powder",
     description: "Finely ground coriander seeds",
     price: "₹90 / 200g",
-    image: "public/57114ea394a96284787fc8381f623410-removebg-preview.png",
+    image: "/57114ea394a96284787fc8381f623410-removebg-preview.png",
   },
   {
     id: 4,
     name: "Garam Masala",
     description: "A blend of aromatic Indian spices",
     price: "₹180 / 100g",
-    image: "public/57114ea394a96284787fc8381f623410-removebg-preview.png",
+    image: "/57114ea394a96284787fc8381f623410-removebg-preview.png",
   },
 ];
 

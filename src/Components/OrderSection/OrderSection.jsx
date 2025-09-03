@@ -94,7 +94,7 @@ const OrderSection = () => {
 
       <div className="order-image">
         <img
-          src="public/57114ea394a96284787fc8381f623410-removebg-preview.png"
+          src="/57114ea394a96284787fc8381f623410-removebg-preview.png"
           alt="Order via WhatsApp"
         />
       </div>
