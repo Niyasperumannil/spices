@@ -43,22 +43,27 @@
   transform: translateY(0);
 }
 
-.benefit-icon {
-  font-size: 28px;
+/* New styles for inline icon */
+.benefit-title {
+  display: flex;
+  flex-direction: column;    /* Stack icon and title vertically */
+  align-items: center;       /* Center horizontally */
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  gap: 8px;                  /* Space between icon and title */
+}
+
+.benefit-icon-inline {
+  font-size: 28px;           /* Make icon bigger */
   color: #e93c3c;
-  flex-shrink: 0;
-  padding: 20px 0px;
+  line-height: 1.5;
+  display: block;            /* Make icon span a block for vertical stack */
 }
 
 .benefit-content {
   max-width: 300px;
-}
-
-.benefit-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #333;
 }
 
 .benefit-text {
@@ -67,7 +72,8 @@
   line-height: 1.5;
 }
 
-/* ✅ Responsive */
+/* Responsive */
+
 @media (max-width: 992px) {
   .benefits-section {
     padding: 40px 60px;
@@ -92,7 +98,7 @@
   }
 
   .benefit-item {
-    flex-direction: row; /* ✅ Keep icon left, text right */
+    flex-direction: row;
     align-items: flex-start;
     text-align: left;
     width: 100%;

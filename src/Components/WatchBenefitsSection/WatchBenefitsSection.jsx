@@ -9,48 +9,46 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 
-const featuresLeft = [
+// ✅ All 6 features in one array
+const allFeatures = [
   {
     id: 1,
-    icon: <FaLeaf />,
+    icon: <FaLeaf size={40} color="#e93c3c" />,
     title: "100% Natural Ingredients",
     description:
       "Crafted from handpicked spices without artificial colors, flavors, or preservatives for authentic taste.",
   },
   {
     id: 2,
-    icon: <FaPepperHot />,
+    icon: <FaPepperHot size={40} color="#e93c3c" />,
     title: "Rich Aroma & Flavor",
     description:
       "Our special blend enhances the taste of every dish with the perfect balance of spice and freshness.",
   },
   {
     id: 3,
-    icon: <FaUtensils />,
+    icon: <FaUtensils size={40} color="#e93c3c" />,
     title: "Perfect for All Recipes",
     description:
       "From curries to grills, our masala complements Indian, continental, and fusion cuisines effortlessly.",
   },
-];
-
-const featuresRight = [
   {
     id: 4,
-    icon: <FaSmile />,
+    icon: <FaSmile size={40} color="#e93c3c" />,
     title: "Loved by Families",
     description:
       "Trusted in kitchens for generations, making every meal memorable and filled with joy.",
   },
   {
     id: 5,
-    icon: <FaHandHoldingHeart />,
+    icon: <FaHandHoldingHeart size={40} color="#e93c3c" />,
     title: "Goodness for Health",
     description:
       "Packed with natural antioxidants and nutrients that support digestion and overall wellness.",
   },
   {
     id: 6,
-    icon: <FaCheckCircle />,
+    icon: <FaCheckCircle size={40} color="#e93c3c" />,
     title: "Quality You Can Trust",
     description:
       "Every pack undergoes strict quality checks to ensure purity, freshness, and consistency.",
@@ -62,7 +60,6 @@ const WatchFeatures = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const allFeatures = [...featuresLeft, ...featuresRight];
     const observer = new IntersectionObserver(
       (entries, observerInstance) => {
         entries.forEach((entry) => {
@@ -75,15 +72,15 @@ const WatchFeatures = () => {
                   }
                   return prev;
                 });
-              }, index * 300); // stagger every 300ms
+              }, index * 300);
             });
-            observerInstance.disconnect(); // Stop observing after animation triggers
+            observerInstance.disconnect();
           }
         });
       },
       {
         root: null,
-        threshold: 0.1, // Trigger when 10% visible
+        threshold: 0.1,
       }
     );
 
@@ -93,6 +90,10 @@ const WatchFeatures = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // ✅ Split features into 2 columns: first 3 left, last 3 right
+  const featuresLeft = allFeatures.slice(0, 3);
+  const featuresRight = allFeatures.slice(3, 6);
 
   const renderFeature = (item) => (
     <div
@@ -112,10 +113,8 @@ const WatchFeatures = () => {
   return (
     <section className="watch-features" ref={sectionRef}>
       <div className="features-layout">
-        {/* Left Column */}
         <div className="features-column">{featuresLeft.map(renderFeature)}</div>
 
-        {/* Center Product Image */}
         <div className="watch-display">
           <img
             src="/51xgLgvEypL._SX569_-removebg-preview.png"
@@ -124,7 +123,6 @@ const WatchFeatures = () => {
           />
         </div>
 
-        {/* Right Column */}
         <div className="features-column">{featuresRight.map(renderFeature)}</div>
       </div>
     </section>

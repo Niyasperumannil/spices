@@ -12,16 +12,26 @@ import FaqSection from '../../Components/FaqSection/FaqSection'
 import MobileAppSection from '../../Components/MobileAppSection/MobileAppSection'
 import ContactSection from '../../Components/ContactSection/ContactSection'
 import Footer from '../../Components/Footer/Footer'
+import MakingProcess from '../../Components/MakingProcess/MakingProcess'
+import AboutCompany from '../../Components/AboutCompany/AboutCompany'
+import DeliveryBanner from '../../Components/DeliveryBanner/DeliveryBanner'
 
 function Hero() {
   return (
     <>
+              
+
       <Header />
+      
       <App />
+       <DeliveryBanner />
       <ProductSection />
+      
       <HowItWorks />
       <BenefitsSection />
       <WatchBenefitsSection  />
+      <AboutCompany />
+      <MakingProcess />
       {/* <CollectionSection /> */}
       <OrderSection />
       <Reviews />

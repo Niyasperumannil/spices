@@ -9,7 +9,7 @@ body {
 
 .hero {
   text-align: center;
-  padding: 170px 30px;
+  padding: 100px 30px;
   background-color: white;
   position: relative;
 }
@@ -145,7 +145,7 @@ body {
 @media (max-width: 768px) {
   .hero {
   text-align: center;
-  padding: 140px 30px;
+  padding: 170px 10px;
   background-color: white;
   position: relative;
 }

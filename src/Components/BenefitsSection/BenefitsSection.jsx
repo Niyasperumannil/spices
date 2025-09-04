@@ -71,15 +71,15 @@ const BenefitsSection = () => {
                   }
                   return prev;
                 });
-              }, index * 300); // stagger every 300ms
+              }, index * 300);
             });
-            observerInstance.disconnect(); // Stop observing after triggered
+            observerInstance.disconnect();
           }
         });
       },
       {
         root: null,
-        threshold: 0.1, // trigger when 10% visible
+        threshold: 0.1,
       }
     );
 
@@ -108,11 +108,14 @@ const BenefitsSection = () => {
               visibleItems.includes(benefit.id) ? "visible" : "hidden"
             }`}
           >
-            <div className="benefit-icon">{benefit.icon}</div>
-            <div className="benefit-content">
-              <h3 className="benefit-title">{benefit.title}</h3>
-              <p className="benefit-text">{benefit.description}</p>
-            </div>
+          <div className="benefit-content">
+  <h3 className="benefit-title">
+    <span className="benefit-icon-inline">{benefit.icon}</span>
+    {benefit.title}
+  </h3>
+  <p className="benefit-text">{benefit.description}</p>
+</div>
+
           </div>
         ))}
       </div>
