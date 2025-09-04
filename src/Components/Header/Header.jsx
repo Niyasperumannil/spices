@@ -12,7 +12,7 @@ const LogoOnlyHeader = () => {
       {/* Logo */}
       <div className="logo-container">
         <img
-          src="https://demo.web3canvas.com/themeforest/proland/images/logo.png"
+          src="/WhatsApp_Image_2025-09-03_at_4.37.15_PM-removebg-preview.png"
           alt="Proland Logo"
           className="logo-image"
         />
@@ -39,8 +39,14 @@ const LogoOnlyHeader = () => {
 
       {/* CTA Button */}
       <div className="cta-container">
-        <button className="cta-button">PRE-ORDER NOW</button>
-      </div>
+<a
+  href="https://wa.me/918590552528?text=Hi!%20I%20want%20to%20pre-order%20spices."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="cta-button"
+>
+  PRE-ORDER NOW
+</a>      </div>
     </header>
   );
 };

@@ -1,6 +1,6 @@
 .how-it-works {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 10px 0px ;
   font-family: "Arial", sans-serif;
 }
 
@@ -32,7 +32,7 @@
   flex: 1 1 250px;
   text-align: center;
   position: relative;
-  max-width: 390px;
+  max-width: 380px;
 
   /* Animation initial state */
   opacity: 0;

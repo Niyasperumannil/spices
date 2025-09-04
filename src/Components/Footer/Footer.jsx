@@ -51,7 +51,7 @@ const Footer = () => {
       </ul>
 
       <p className="footer-copy">
-        Copyright © {new Date().getFullYear()} Proland. All rights reserved
+        Copyright © {new Date().getFullYear()} TastyStories. All rights reserved
       </p>
     </footer>
   );

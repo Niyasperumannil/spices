@@ -44,9 +44,15 @@ function App() {
             <span className="play-icon">▶</span> Video
           </button> */}
           {isMobile && (
-            <button className="pre-order-button fade-item delay-3">
-              Pre-order Now
-            </button>
+          <a
+  href="https://wa.me/918590552528?text=Hi!%20I%20want%20to%20pre-order%20spices."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="pre-order-button fade-item delay-3"
+>
+  Pre-order Now
+</a>
+
           )}
         </div>
       </div>

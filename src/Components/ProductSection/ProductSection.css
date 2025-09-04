@@ -1,6 +1,6 @@
 .product-section {
   text-align: center;
-  padding: -10px 0px 0px 0px;
+  padding: 1px 0px 0px 0px;
   font-family: "Arial", sans-serif;
 }
 
@@ -117,6 +117,11 @@
 
 /* Tablets */
 @media (max-width: 1024px) {
+  .product-section {
+  text-align: center;
+  padding: 1px 0px 0px 0px;
+  font-family: "Arial", sans-serif;
+}
   .product-title {
     font-size: 40px;
   }

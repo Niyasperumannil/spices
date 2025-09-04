@@ -4,28 +4,28 @@ import "./Reviews.css";
 const reviewsData = [
   {
     id: 1,
-    text: "The Watch is the nicest smartwatch available, but it's more status symbol than wearable revolutionary. Most of the Watch's features are great.",
-    author: "TECH COMPANY",
+    text: "The spices are so fresh and aromatic. They remind me of the flavors my grandmother used in her cooking.",
+    author: "Anitha, Kerala",
   },
   {
     id: 2,
-    text: "Watch is the most ambitious, well-constructed smartwatch ever seen, but first-gen shortfalls make it feel more like a fashionable toy than a necessary tool.",
-    author: "SMART REVIEW",
+    text: "I love the rich taste these spices add to my curries. The quality is far better than what I used to get in the supermarket.",
+    author: "Rahul, Bangalore",
   },
   {
     id: 3,
-    text: "Watch is the best smartwatch we’ve used, and the first that feels friendly and has character. Watch OS 2.0 adds needed app and Siri abilities.",
-    author: "TECH LAUNCH",
+    text: "These spices have transformed the way I cook. The masalas feel authentic and full of flavor.",
+    author: "Fatima, Chennai",
   },
   {
     id: 4,
-    text: "It redefines convenience and blends fashion with function. Easily my favorite gadget of the year.",
-    author: "GADGET INSIDER",
+    text: "The freshness is unmatched. Every dish feels more vibrant and tasty with these spices.",
+    author: "Joseph, Kochi",
   },
   {
     id: 5,
-    text: "The new Watch offers unmatched performance, a sleek design, and a surprisingly intuitive user experience.",
-    author: "DIGITAL WORLD",
+    text: "Finally found spices that remind me of home. Fragrant, pure, and absolutely delicious.",
+    author: "Meera, Mumbai",
   },
 ];
 
@@ -53,10 +53,10 @@ const Reviews = () => {
 
   return (
     <section className="reviews-section" id="reviews" ref={sectionRef}>
-      <h2 className="reviews-title">WHAT EXPERTS SAY</h2>
+      <h2 className="reviews-title">CUSTOMER REVIEWS</h2>
       <div className="underline-accent" />
       <p className="reviews-subtitle">
-        Don’t take our word for it — here’s what industry leaders are saying about our product.
+        Hear from our happy customers who bring authentic flavor to their homes with our spices.
       </p>
 
       <div className="review-cards">

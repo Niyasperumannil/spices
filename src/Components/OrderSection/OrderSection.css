@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 150px;
-  font-family: "Arial", sans-serif;
+  padding: 60px 180px;
+  font-family: 'poppins', sans-serif;
   background: #f9fbff;
   flex-direction: row; /* ensures image left, content right */
 }
@@ -24,7 +24,7 @@
 
 .order-title {
   font-size: 52px;
-  font-weight: 600;
+  font-weight: 400;
   color: #333;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -33,7 +33,7 @@
 .order-subtitle {
   font-size: 28px;
   color: #555;
-  font-weight: 300;
+  font-weight: 200;
   margin-bottom: 30px;
   line-height: 1.6;
 }

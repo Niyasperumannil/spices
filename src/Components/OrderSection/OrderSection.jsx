@@ -92,7 +92,7 @@ const OrderSection = () => {
         </ul>
 
         <a
-          href="https://wa.me/919876543210?text=Hello,%20I%20want%20to%20order%20masalas"
+          href="https://wa.me/918590552528?text=Hello,%20I%20want%20to%20order%20masalas"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-btn"
