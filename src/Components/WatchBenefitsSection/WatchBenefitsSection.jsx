@@ -9,7 +9,6 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 
-// ✅ All 6 features in one array
 const allFeatures = [
   {
     id: 1,
@@ -78,22 +77,12 @@ const WatchFeatures = () => {
           }
         });
       },
-      {
-        root: null,
-        threshold: 0.1,
-      }
+      { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-
-  // ✅ Split features into 2 columns: first 3 left, last 3 right
-  const featuresLeft = allFeatures.slice(0, 3);
-  const featuresRight = allFeatures.slice(3, 6);
 
   const renderFeature = (item) => (
     <div
@@ -102,6 +91,7 @@ const WatchFeatures = () => {
         visibleItems.includes(item.id) ? "visible" : "hidden"
       }`}
     >
+      {/* Icon on top */}
       <div className="feature-icon">{item.icon}</div>
       <div className="feature-content">
         <h3 className="feature-title">{item.title}</h3>
@@ -112,18 +102,28 @@ const WatchFeatures = () => {
 
   return (
     <section className="watch-features" ref={sectionRef}>
-      <div className="features-layout">
-        <div className="features-column">{featuresLeft.map(renderFeature)}</div>
-
-        <div className="watch-display">
-          <img
-            src="/51xgLgvEypL._SX569_-removebg-preview.png"
-            alt="Masala Product"
-            className="watch-img"
-          />
+      <div className="feature-wrapper">
+        <div className="feature-row top">
+          {renderFeature(allFeatures[0])}
+          {renderFeature(allFeatures[1])}
         </div>
 
-        <div className="features-column">{featuresRight.map(renderFeature)}</div>
+        <div className="feature-row middle">
+          <div className="side">{renderFeature(allFeatures[2])}</div>
+          <div className="image-col">
+            <img
+              src="/51xgLgvEypL._SX569_-removebg-preview.png"
+              alt="Masala Product"
+              className="watch-img"
+            />
+          </div>
+          <div className="side">{renderFeature(allFeatures[3])}</div>
+        </div>
+
+        <div className="feature-row bottom">
+          {renderFeature(allFeatures[4])}
+          {renderFeature(allFeatures[5])}
+        </div>
       </div>
     </section>
   );

@@ -36,11 +36,8 @@
 .faq-item {
   flex: 1 1 45%;
   max-width: 45%;
-
-  /* Initial hidden state */
   opacity: 0;
   transform: translateY(20px);
-
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
   animation-duration: 0.6s;
@@ -76,11 +73,18 @@
   line-height: 1.6;
 }
 
-/* Responsive */
+/* ========================= */
+/* Responsive Styles         */
+/* ========================= */
 
+/* Tablets (600px - 900px) */
 @media (max-width: 900px) {
   .faq-section {
     padding: 40px 30px;
+  }
+
+  .faq-grid {
+    gap: 30px;
   }
 
   .faq-item {
@@ -90,6 +94,7 @@
   }
 }
 
+/* Mobile phones (<600px) */
 @media (max-width: 600px) {
   .faq-title {
     font-size: 32px;
@@ -106,5 +111,10 @@
 
   .faq-item p {
     font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .faq-grid {
+    gap: 20px;
   }
 }

@@ -28,7 +28,7 @@ function Hero() {
       <ProductSection />
       
       <HowItWorks />
-      <BenefitsSection />
+      {/* <BenefitsSection /> */}
       <WatchBenefitsSection  />
       <AboutCompany />
       <MakingProcess />

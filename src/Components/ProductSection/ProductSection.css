@@ -1,7 +1,15 @@
+/* ========================= */
+/*        Base Styles        */
+/* ========================= */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f7f9fb;
+}
+
 .product-section {
   text-align: center;
-  padding: 1px 0px 0px 0px;
-  font-family: "Arial", sans-serif;
+  padding: 30px 0 0 0;
 }
 
 .product-title {
@@ -20,6 +28,7 @@
   line-height: 1.4;
 }
 
+/* Image container */
 .product-image-container {
   position: relative;
   display: inline-block;
@@ -30,6 +39,7 @@
   height: auto;
 }
 
+/* Hotspot */
 .hotspot {
   position: absolute;
   width: 28px;
@@ -44,20 +54,24 @@
   cursor: pointer;
   transition: background 0.3s;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .hotspot:hover {
   background-color: #e93c3c;
 }
 
-/* Tooltip base */
+/* Tooltip container */
 .hotspot-tooltip {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   white-space: nowrap;
   z-index: 1;
 }
@@ -68,6 +82,7 @@
   font-weight: 500;
   color: #e93c3c;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .tooltip-line {
@@ -76,85 +91,43 @@
   background-color: #e93c3c;
 }
 
-/* Tooltip on right side (desktop) */
+/* Tooltip position */
 .hotspot-tooltip.right {
   left: 120%;
-  flex-direction: row; /* Line → Text */
+  flex-direction: row;
   text-align: left;
 }
 
-/* Tooltip on left side (desktop) */
 .hotspot-tooltip.left {
   right: 120%;
-  flex-direction: row-reverse; /* Text → Line */
+  flex-direction: row-reverse;
   text-align: right;
 }
 
 /* Hotspot positions */
-.hotspot-top-left {
-  top: 30%;
-  left: -15px;
-}
+.hotspot-top-left { top: 30%; left: -15px; }
+.hotspot-top-right { top: 20%; right: -15px; }
+.hotspot-center-right { top: 50%; right: -15px; }
+.hotspot-bottom-left { bottom: 15%; left: -15px; }
 
-.hotspot-top-right {
-  top: 20%;
-  right: -15px;
-}
-
-.hotspot-center-right {
-  top: 50%;
-  right: -15px;
-}
-
-.hotspot-bottom-left {
-  bottom: 15%;
-  left: -15px;
-}
-
-/* ========================
-   RESPONSIVE STYLES
-   ======================== */
+/* ========================= */
+/*   Responsive Styles       */
+/* ========================= */
 
 /* Tablets */
 @media (max-width: 1024px) {
-  .product-section {
-  text-align: center;
-  padding: 1px 0px 0px 0px;
-  font-family: "Arial", sans-serif;
-}
-  .product-title {
-    font-size: 40px;
-  }
-
-  .product-description {
-    font-size: 22px;
-    max-width: 700px;
-  }
-
-  .product-image {
-    width: 350px;
-  }
-
-  .tooltip-text {
-    font-size: 13px;
-  }
+  .product-title { font-size: 40px; }
+  .product-description { font-size: 22px; max-width: 700px; }
+  .product-image { width: 350px; }
+  .tooltip-text { font-size: 13px; }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .product-title {
-    font-size: 32px;
-  }
-
-  .product-description {
-    font-size: 18px;
-    max-width: 90%;
-  }
-
-  .product-image {
-    width: 260px;
-  }
-
+  .product-title { font-size: 32px; }
+  .product-description { font-size: 18px; max-width: 90%; line-height: 1.4; }
+  .product-image { width: 260px; }
+  
   .hotspot {
     width: 22px;
     height: 22px;
@@ -162,24 +135,21 @@
     line-height: 22px;
   }
 
-  /* Tooltip changes for mobile: display above marker */
+  /* Tooltip stacked above hotspot */
   .hotspot-tooltip {
     position: relative;
     top: auto;
-    bottom: 100%;           /* show above the hotspot */
+    bottom: 100%;
     left: 50%;
-    right: auto;
     transform: translateX(-50%);
-    flex-direction: column-reverse; /* text above marker */
-    gap: 5px;
+    flex-direction: column-reverse;
+    gap: 6px;
     margin-bottom: 8px;
     text-align: center;
-    white-space: normal; /* allow wrapping */
+    white-space: normal;
   }
 
-  .tooltip-line {
-    display: none; /* hide connector line */
-  }
+  .tooltip-line { display: none; }
 
   .tooltip-text {
     font-size: 12px;
@@ -187,52 +157,33 @@
     padding: 4px 8px;
     border-radius: 6px;
     border: 1px solid #e93c3c;
+    color: #e93c3c;
+    font-weight: 500;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
-  .product-title {
-    font-size: 26px;
-  }
-
-  .product-description {
-    font-size: 16px;
-    line-height: 1.3;
-  }
-
-  .product-image {
-    width: 200px;
-  }
-
-  .tooltip-text {
-    font-size: 11px;
-  }
+  .product-title { font-size: 26px; }
+  .product-description { font-size: 16px; line-height: 1.3; }
+  .product-image { width: 200px; }
+  .tooltip-text { font-size: 11px; }
 }
 
-/* ==============================
-   ANIMATION FOR HOTSPOTS
-   ============================== */
-
-/* Initially hidden hotspots */
+/* ========================= */
+/* Hotspot Animations         */
+/* ========================= */
 .hotspot.hidden {
   opacity: 0;
   transform: translateY(20px);
-  pointer-events: none; /* prevent interaction while hidden */
+  pointer-events: none;
 }
 
-/* Animate hotspots: fade in + slide up */
 .hotspot.animate {
   animation: fadeSlideUp 0.5s forwards;
 }
 
 @keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

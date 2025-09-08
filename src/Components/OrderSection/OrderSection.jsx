@@ -97,6 +97,7 @@ const OrderSection = () => {
           rel="noopener noreferrer"
           className="whatsapp-btn"
         >
+          <FaWhatsapp className="whatsapp-icon" />
           Order on WhatsApp
         </a>
       </div>

@@ -1,6 +1,9 @@
+/* ========================= */
+/*       How It Works        */
+/* ========================= */
 .how-it-works {
   text-align: center;
-  padding: 50px 20px 0px ;
+  padding: 50px 20px 0;
   font-family: "Arial", sans-serif;
 }
 
@@ -8,7 +11,7 @@
   font-size: 50px;
   font-weight: 600;
   color: #2c2c2c;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* gap consistency */
 }
 
 .how-description {
@@ -34,10 +37,14 @@
   position: relative;
   max-width: 380px;
 
-  /* Animation initial state */
+  /* Animation */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .step-item.visible {
@@ -46,14 +53,12 @@
 }
 
 .step-icon {
-  font-size: 120px; /* replace with image size if using <img> */
-  margin-bottom: 20px;
+  font-size: 120px; /* replace with <img> size if needed */
 }
 
 .step-title {
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 12px;
   color: #333;
 }
 
@@ -70,18 +75,26 @@
   position: absolute;
   top: 30%;
   right: -40px;
+  pointer-events: none;
 }
 
-/* ✅ Mobile Responsive */
+/* ========================= */
+/*       Mobile Styles       */
+/* ========================= */
+@media (max-width: 1024px) {
+  .step-icon { font-size: 100px; }
+}
+
 @media (max-width: 768px) {
   .how-title {
     font-size: 32px;
+    margin-bottom: 15px;
   }
 
   .how-description {
     font-size: 18px;
-    max-width: 100%;
-    margin: 0 auto 30px;
+    max-width: 90%;
+    margin-bottom: 30px;
   }
 
   .steps-container {
@@ -92,10 +105,11 @@
 
   .step-item {
     max-width: 100%;
+    gap: 10px;
   }
 
   .step-icon {
-    font-size: 80px; /* scale down icons on mobile */
+    font-size: 80px;
   }
 
   .step-title {
@@ -107,6 +121,14 @@
   }
 
   .step-arrow {
-    display: none;
+    display: none; /* hide arrows on mobile */
   }
+}
+
+@media (max-width: 480px) {
+  .how-title { font-size: 28px; }
+  .how-description { font-size: 16px; line-height: 1.4; }
+  .step-icon { font-size: 60px; }
+  .step-title { font-size: 16px; }
+  .step-text { font-size: 13px; line-height: 1.4; }
 }

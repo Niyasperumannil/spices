@@ -1,3 +1,6 @@
+/* ========================= */
+/*      Delivery Banner      */
+/* ========================= */
 .delivery-banner {
   display: flex;
   align-items: center;
@@ -9,11 +12,10 @@
   max-width: 1100px;
   gap: 100px;
   border-radius: 10px;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* keep desktop unchanged */
 }
 
-/* Existing styles ... (same as you provided) */
-
+/* Scheduled delivery section */
 .scheduled-delivery {
   display: flex;
   align-items: center;
@@ -40,6 +42,7 @@
   stroke: #124031;
 }
 
+/* Free delivery info */
 .free-delivery-info {
   display: flex;
   flex-direction: column;
@@ -54,6 +57,7 @@
   margin-top: 2px;
 }
 
+/* Divider */
 .divider {
   height: 32px;
   width: 1px;
@@ -61,6 +65,7 @@
   margin: 0 16px;
 }
 
+/* Logo section */
 .spinneys-logo-container {
   display: flex;
   align-items: center;
@@ -71,6 +76,7 @@
   width: auto;
 }
 
+/* Delivery details */
 .delivery-time,
 .minimum-order {
   display: flex;
@@ -94,21 +100,26 @@
   font-size: 14px;
 }
 
-/* --- Responsive styles --- */
+/* ========================= */
+/*   Mobile Responsive CSS   */
+/* ========================= */
 @media (max-width: 768px) {
   .delivery-banner {
-    flex-wrap: wrap;
+    flex-wrap: wrap;             /* stack items */
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin-left: 0;
     max-width: 100%;
     gap: 12px;
-    border-radius: 0;
+    border-radius: 8px;          /* slightly rounded for mobile */
+    align-items: flex-start;
   }
 
   .scheduled-delivery {
     font-size: 14px;
     gap: 6px;
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .icon-container {
@@ -131,7 +142,7 @@
   }
 
   .divider {
-    display: none; /* Hide divider on small screens */
+    display: none; /* remove divider for small screens */
   }
 
   .spinneys-logo {
@@ -142,7 +153,7 @@
   .delivery-time,
   .minimum-order {
     font-size: 13px;
-    flex-direction: row;
+    flex-direction: row;           /* label + value side by side */
     justify-content: space-between;
     width: 100%;
   }
