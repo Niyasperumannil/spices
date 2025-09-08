@@ -107,7 +107,7 @@
 @media (max-width: 1024px) {
   .order-section {
     flex-direction: column;
-    padding: 40px 60px;
+    padding: 1px 10px;
     align-items: center;
   }
 
@@ -152,7 +152,7 @@
 /* Mobile phones (<600px) */
 @media (max-width: 600px) {
   .order-section {
-    padding: 30px 20px;
+    padding: 1px 20px;
   }
 
   .order-image {

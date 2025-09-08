@@ -2,19 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
 }
 
-/* ========================= */
-/* About Company Section     */
-/* ========================= */
 .about-company {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px; /* fixed negative padding */
+  padding: -30px 30px;
   background: #e90d0d url('https://www.transparenttextures.com/patterns/white-wall.png');
   background-size: cover;
   color: #fff;
@@ -40,7 +37,7 @@ body {
   line-height: 1.8;
   margin-bottom: 30px;
   color: #fff;
-  max-width: 1200px;
+  max-width: 1200px; /* wider than 950px */
 }
 
 .view-more-btn {
@@ -74,24 +71,29 @@ body {
 }
 
 /* ========================= */
-/* Responsive Styles         */
+/* Responsive Styles */
+/* ========================= */
+/* Responsive layout */
+/* Responsive layout */
+/* ========================= */
+/* Responsive Layout Styles  */
 /* ========================= */
 
-/* Tablets & small laptops */
+/* Tablet & small laptops */
 @media (max-width: 1024px) {
   .about-company {
-    flex-direction: column;
+    flex-direction: column; /* ✅ Stack content above image */
     text-align: center;
     padding: 40px 20px;
-    gap: 25px; /* more consistent spacing */
+    gap: 20px;
   }
 
   .about-left {
     margin-left: 0;
     margin-top: 0;
     max-width: 90%;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 
   .about-left h2 {
@@ -106,18 +108,15 @@ body {
   }
 
   .about-image {
-    max-width: 360px;
-    margin: 20px auto 0;
-    margin-left: 0;
-    margin-top: 0;
+    max-width: 320px;
+    margin: 20px auto 0; /* Center image neatly */
   }
 }
 
 /* Mobile phones */
 @media (max-width: 600px) {
   .about-company {
-    padding: 25px 10px;
-    gap: 20px;
+    padding: 30px 5px;
   }
 
   .about-left h2 {
@@ -128,8 +127,12 @@ body {
   .about-left p {
     font-size: 14px;
     line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 20px;
+    text-align: justify; /* Cleaner look on small screens */
+  }
+
+  .about-image {
+    max-width: 280px;
+    margin: -80px auto 0;
   }
 
   .view-more-btn {
@@ -137,30 +140,7 @@ body {
     font-size: 14px;
     margin-top: 10px;
   }
-
-  .about-image {
-    max-width: 280px;
-    margin: 0 auto;
-  }
 }
 
-/* Extra small devices (very small mobile) */
-@media (max-width: 480px) {
-  .about-left h2 {
-    font-size: 22px;
-  }
 
-  .about-left p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
 
-  .view-more-btn {
-    padding: 8px 20px;
-    font-size: 13px;
-  }
-
-  .about-image {
-    max-width: 240px;
-  }
-}
