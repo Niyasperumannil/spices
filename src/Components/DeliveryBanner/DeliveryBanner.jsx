@@ -19,7 +19,7 @@ const DeliveryBanner = () => {
 
           <div className="free-delivery-label">
             Free Delivery<br />
-            <strong>Over AED 350</strong>
+            <strong>Over 1000 rupees</strong>
           </div>
         </div>
 
@@ -36,14 +36,14 @@ const DeliveryBanner = () => {
         <div className="delivery-right-section">
           <div className="delivery-info-box-left">
             Delivery in<br />
-            <strong>60 minutes</strong>
+            <strong>3 Days</strong>
           </div>
 
           <div className="vertical-divider-line" />
 
           <div className="delivery-info-box-right">
             Minimum order<br />
-            <strong>AED 40</strong>
+            <strong>250</strong>
           </div>
         </div>
 
