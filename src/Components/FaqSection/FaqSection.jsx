@@ -56,7 +56,7 @@ const FaqSection = () => {
       <p className="faq-subtitle">
         Got questions? We’ve got answers. If you have other queries,
         feel free to send us an email at{" "}
-        <a href="mailto:hello@spices.com">hello@spices.com</a>
+        <a href="mailto:hello@spices.com">hellotastystories.com</a>
       </p>
 
       <div className="faq-grid">

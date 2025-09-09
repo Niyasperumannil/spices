@@ -45,7 +45,7 @@ const DeliveryBanner = () => {
       {/* Delivery Time */}
       <div className="delivery-time">
         <strong>Delivery in</strong>
-        <span>90 minutes</span>
+        <span>3 Days</span>
       </div>
 
       {/* Minimum Order */}

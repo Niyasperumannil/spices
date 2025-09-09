@@ -7,16 +7,16 @@ const AboutCompany = () => {
       <div className="about-left">
         <h2>About the Company</h2>
         <p>
-          Ajmi Flour Mills (India) Pvt Ltd. is a fully automated cereal and
-          spice processing company located at Elappunkal, Erattupetta in Kottayam
-          District of Kerala. It has been manufacturing and marketing
-          high-quality rice products, spice powders, etc. since 1994. Ajmi has
-          adhered to stringent quality standards to secure and maintain trust
-          and customer satisfaction. Presently, it is the biggest seller of
-          breakfast foods in Kerala and the Ajmi brand is an absolute customer
-          favourite.
+     Tastty Stories, formerly known as Ajmi Flour Mills (India) Pvt. Ltd., continues its legacy since 1994 as a leader in Kerala’s breakfast foods segment. With a strong reputation built on quality, innovation, and customer trust, the company is now expanding its footprint with a new base in Cherpulassery, Palakkad (established 2025), aiming to deliver Kerala's authentic flavors under its refreshed brand identity
         </p>
-        <a href="#more" className="view-more-btn">View More</a>
+<a
+  href="https://wa.me/919876543210?text=Hi%2C%20I%20saw%20your%20site%20and%20want%20to%20know%20more!"
+  className="view-more-btn"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View More
+</a>
       </div>
 
       <div className="about-right">

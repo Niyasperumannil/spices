@@ -5,7 +5,7 @@
   padding: 0 190px; /* corrected negative padding */
   background: #fff;
   font-family: "Helvetica Neue", sans-serif;
-  gap: 40px;
+  gap: 0px;
 }
 
 /* Left side with two images */
@@ -39,8 +39,8 @@
 /* Right text content */
 .process-right {
   flex: 1.2;
-  margin-right: 170px;
-  gap: 0;
+  margin-right: 150px;
+  gap: 10px;
 }
 
 .process-right h2 {
@@ -78,8 +78,8 @@
 }
 
 .icon-circle {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border: 2px solid #e93c3c;
   border-radius: 50%;
   display: flex;
