@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: -30px 30px;
+  padding: 1px 50px 0px 0px;
   background: #e90d0d url('https://www.transparenttextures.com/patterns/white-wall.png');
   background-size: cover;
   color: #fff;
@@ -22,7 +22,7 @@ body {
 .about-left {
   flex: 1.2;
   margin-left: 250px;
-  margin-top: 40px;
+  margin-top: 1px;
 }
 
 .about-left h2 {
@@ -66,7 +66,7 @@ body {
 .about-image {
   max-width: 700px;
   margin-left: -30px;
-  margin-top: -50px;
+  margin-top: -95px;
   height: auto;
 }
 
