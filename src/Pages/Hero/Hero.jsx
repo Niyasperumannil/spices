@@ -15,18 +15,21 @@ import Footer from '../../Components/Footer/Footer'
 import MakingProcess from '../../Components/MakingProcess/MakingProcess'
 import AboutCompany from '../../Components/AboutCompany/AboutCompany'
 import DeliveryBanner from '../../Components/DeliveryBanner/DeliveryBanner'
+import OfferBanner from '../../Components/OfferBanner/OfferBanner'
 
 function Hero() {
   return (
     <>
-              
+                                     <OfferBanner />
 
       <Header />
       
       <App />
        <DeliveryBanner />
+
       <ProductSection />
-      
+
+
       <HowItWorks />
       {/* <BenefitsSection /> */}
       <WatchBenefitsSection  />

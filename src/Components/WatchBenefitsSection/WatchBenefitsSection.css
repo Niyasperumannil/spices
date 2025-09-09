@@ -27,7 +27,7 @@
 .feature-row.bottom {
   justify-content: space-around;
   margin-bottom: 10px;
-  margin-top: 1px;
+  margin-top: -51px;
 }
 
 .feature-row.middle {
