@@ -10,8 +10,9 @@ const DeliveryBanner = () => {
         <div className="delivery-left-section">
           <div className="delivery-scheduled-box">
             <div className="delivery-icon-circle">
-              <div className="icon-slice-bar" />
-            </div>
+  <img src="/ceramic-pickle-jar-known-bharani-600nw-2122551386-removebg-preview.png" alt="Delivery Icon" className="delivery-icon-image" />
+</div>
+
             <span>Scheduled Delivery</span>
           </div>
 
