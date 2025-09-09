@@ -105,3 +105,61 @@
   background-color: #ccc;
   height: 30px;
 }
+@media (max-width: 768px) {
+  .delivery-banner-wrapper-outer {
+    padding: 10px 20px;
+  }
+
+  .delivery-banner-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .delivery-left-section {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .delivery-scheduled-box {
+    margin: 10px auto;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .free-delivery-label {
+    margin: 10px 0 0;
+    width: auto;
+  }
+
+  .spinneys-logo-block {
+    margin: 10px 0;
+  }
+
+  .spinneys-logo-img {
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .delivery-right-section {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .delivery-info-box-left,
+  .delivery-info-box-right {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .vertical-divider-line {
+    display: none;
+  }
+}
