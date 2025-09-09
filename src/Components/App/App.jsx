@@ -50,7 +50,7 @@ function App() {
   rel="noopener noreferrer"
   className="pre-order-button fade-item delay-3"
 >
-  Pre-order Now
+  Order Now
 </a>
 
           )}

@@ -26,18 +26,17 @@ body {
 }
 
 .about-left h2 {
-  font-size: 40px;
   margin-bottom: 20px;
-  font-weight: bold;
-  color: #fff;
+ font-size: 48px;
+  font-weight: 700;
+  color: #f5f5f5;
 }
 
 .about-left p {
-  font-size: 16px;
-  line-height: 1.8;
+font-size: 20px;
+    line-height: 1.5;
   margin-bottom: 30px;
   color: #fff;
-  max-width: 1200px; /* wider than 950px */
 }
 
 .view-more-btn {

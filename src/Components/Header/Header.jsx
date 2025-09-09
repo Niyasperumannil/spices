@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import { FaWhatsapp } from "react-icons/fa";
 
 const LogoOnlyHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,14 +41,15 @@ const LogoOnlyHeader = () => {
   
         {/* CTA Button */}
         <div className="cta-container">
-  <a
-    href="https://wa.me/918590552528?text=Hi!%20I%20want%20to%20pre-order%20spices."
-    target="_blank"
-    rel="noopener noreferrer"
-    className="cta-button"
-  >
-    PRE-ORDER NOW
-  </a>      </div>
+ <a
+  href="https://wa.me/918590552528?text=Hi!%20I%20want%20to%20pre-order%20spices."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="cta-button whatsapp-button"
+>
+  <FaWhatsapp className="whatsapp-icon" />
+  ORDER NOW
+</a>   </div>
       </header>
   </>
   );

@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2px 200px;
+  padding: 18px 200px;
   background-color: #fff;
   font-family: sans-serif;
   position: fixed;
@@ -16,7 +16,7 @@
   right: 0;
   z-index: 1000;
   transition: padding 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
-  height: 70px;
+  height: 80px;
 }
 
 .header.scrolled {
@@ -59,26 +59,27 @@
 /* ========================= */
 /*       CTA Button          */
 /* ========================= */
-.cta-button {
-  display: inline-block;
-  background-color: #e93c3c;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
+.cta-button.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
   padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
   font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #c32f2f;
-  transform: translateY(-2px);
-  text-decoration: none;
-}
 
+.cta-button.whatsapp-button:hover {
+  background-color: #1ebc59;
+}
+.whatsapp-icon {
+  font-size: 1.2rem;
+}
 /* ========================= */
 /*       Mobile Menu         */
 /* ========================= */

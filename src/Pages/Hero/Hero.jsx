@@ -5,7 +5,7 @@ import ProductSection from '../../Components/ProductSection/ProductSection'
 import HowItWorks from '../../Components/HowItWorks/HowItWorks'
 import BenefitsSection from '../../Components/BenefitsSection/BenefitsSection'
 import WatchBenefitsSection from '../../Components/WatchBenefitsSection/WatchBenefitsSection'
-import CollectionSection from '../../Components/CollectionSection/CollectionSection'
+// import CollectionSection from '../../Components/CollectionSection/CollectionSection'
 import OrderSection from '../../Components/OrderSection/OrderSection'
 import Reviews from '../../Components/Reviews/Reviews'
 import FaqSection from '../../Components/FaqSection/FaqSection'
@@ -16,16 +16,17 @@ import MakingProcess from '../../Components/MakingProcess/MakingProcess'
 import AboutCompany from '../../Components/AboutCompany/AboutCompany'
 import DeliveryBanner from '../../Components/DeliveryBanner/DeliveryBanner'
 import OfferBanner from '../../Components/OfferBanner/OfferBanner'
+import TeaSlider from '../../Components/TeaSlider/TeaSlider'
 
 function Hero() {
   return (
     <>
-                                     <OfferBanner />
+                                     {/* <OfferBanner /> */}
 
       <Header />
-      
+       {/* <TeaSlider /> */}
       <App />
-       <DeliveryBanner />
+       {/* <DeliveryBanner /> */}
 
       <ProductSection />
 

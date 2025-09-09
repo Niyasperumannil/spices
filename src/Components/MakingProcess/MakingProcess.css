@@ -44,17 +44,17 @@
 }
 
 .process-right h2 {
-  font-size: 36px;
-  color: #110505;
+  font-size: 48px;
+  font-weight: 700;
+  color: #222;
   margin-bottom: 15px;
 }
 
 .process-right p {
-  font-size: 16px;
+ font-size: 20px;
+  color: #999;  
   line-height: 1.6;
-  color: #333;
   margin-bottom: 30px;
-  max-width: 600px;
   width: 100%;
   text-align: justify;
 }
