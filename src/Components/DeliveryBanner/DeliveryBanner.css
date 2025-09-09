@@ -1,171 +1,107 @@
-/* ========================= */
-/*      Delivery Banner      */
-/* ========================= */
-.delivery-banner {
-  display: flex;
-  align-items: center;
-  background-color: #124031; /* dark green */
-  color: white;
-  font-family: Arial, sans-serif;
-  padding: 1px 20px 10px 50px;
-  margin-left: 170px;
-  max-width: 1100px;
-  gap: 90px;
-  border-radius: 10px;
-  flex-wrap: nowrap; /* keep desktop unchanged */
+.delivery-banner-wrapper-outer {
+  padding: 1px 190px;
+  background-color: #f9f9f9;
 }
 
-/* Scheduled delivery section */
-.scheduled-delivery {
+.delivery-banner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  height: 100px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1px 5px;
+  font-family: Arial, sans-serif;
+}
+
+.delivery-left-section {
+  display: flex;
+  align-items: center;
+  background-color: #0f4d3c;
+  color: white;
+  height: 40px;
+  padding: 26px 18px;
+  gap: 0px;
+  border-radius: 10px;
+}
+
+.delivery-scheduled-box {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
-  font-size: 16px;
-  white-space: nowrap;
+    width: 200px;
+
+  margin-right: 280px;
+  font-weight: bold;
 }
 
-.icon-container {
-  background: white;
-  padding: 6px;
-  border-radius: 6px;
+.delivery-icon-circle {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  margin-right: 10px;
+  border-radius: 50%;
   display: flex;
-  align-items: center;
+  margin-right: 0px;
+  padding-right: 0px;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  align-items: center;
 }
 
-.delivery-icon {
-  width: 28px;
-  height: 18px;
-  stroke: #124031;
+.icon-slice-bar {
+  width: 6px;
+  height: 12px;
+  background-color: #0f4d3c;
 }
 
-/* Free delivery info */
-.free-delivery-info {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: left;
-}
-
-.free-delivery-info strong {
-  font-weight: 700;
-  font-size: 16px;
-  margin-top: 2px;
-}
-
-/* Divider */
-.divider {
-  height: 32px;
+.vertical-divider-line {
   width: 1px;
-  background-color: #ffffff7a;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
   margin: 0 16px;
 }
 
-/* Logo section */
-.spinneys-logo-container {
+.free-delivery-label {
+  text-align: center;
+  margin-left: 15px;
+  width: 120px;
+  font-size: 14px;
+}
+
+.spinneys-logo-block {
+  margin: 0 30px;
+}
+
+.spinneys-logo-img {
+  height: 142px;
+  margin-right: 220px;
+  margin-left: -90px;
+}
+
+.delivery-right-section {
   display: flex;
   align-items: center;
-}
-
-.spinneys-logo {
-  height: 95px;
-  width: auto;
-}
-
-/* Delivery details */
-.delivery-time,
-.minimum-order {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: left;
-  white-space: nowrap;
-}
-
-.delivery-time strong,
-.minimum-order strong {
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.delivery-time span,
-.minimum-order span {
-  margin-top: 2px;
-  font-weight: 600;
+  margin-left: -100px;
+  color: #000;
   font-size: 14px;
 }
 
-/* ========================= */
-/*   Mobile Responsive CSS   */
-/* ========================= */
-@media (max-width: 768px) {
-  .delivery-banner {
-    flex-wrap: wrap;             /* stack items */
-    flex-direction: column;
-    padding: 12px 20px;
-    margin-left: 0;
-    max-width: 100%;
-    gap: 12px;
-    border-radius: 8px;          /* slightly rounded for mobile */
-    align-items: flex-start;
-  }
+.delivery-info-box-left {
+  text-align: center;
+    width: 100px;
 
-  .scheduled-delivery {
-    font-size: 14px;
-    gap: 6px;
-    width: 100%;
-    justify-content: flex-start;
-  }
+  margin: 0 12px;
+}
 
-  .icon-container {
-    width: 28px;
-    height: 28px;
-    padding: 4px;
-  }
+.delivery-info-box-right {
+  text-align: center;
+    width: 100px;
 
-  .delivery-icon {
-    width: 20px;
-    height: 14px;
-  }
+  margin: 0 12px;
+}
 
-  .free-delivery-info {
-    font-size: 13px;
-  }
-
-  .free-delivery-info strong {
-    font-size: 14px;
-  }
-
-  .divider {
-    display: none; /* remove divider for small screens */
-  }
-
-  .spinneys-logo {
-    height: 60px;
-    margin: 10px 0;
-  }
-
-  .delivery-time,
-  .minimum-order {
-    font-size: 13px;
-    flex-direction: row;           /* label + value side by side */
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .delivery-time strong,
-  .minimum-order strong {
-    font-size: 14px;
-  }
-
-  .delivery-time span,
-  .minimum-order span {
-    font-size: 13px;
-    margin-top: 0;
-  }
+.delivery-right-section .vertical-divider-line {
+  background-color: #ccc;
+  height: 30px;
 }
