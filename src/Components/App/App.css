@@ -1,26 +1,136 @@
 /* ========================= */
-/*        Base Styles        */
+/* Hero Section              */
 /* ========================= */
-body {
-  margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background: #f7f9fb;
-}
-
 .hero {
-  text-align: center;
-  padding: 120px 40px 30px 70px;
-  background-color: white;
+  width: 100%;
   position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.hero-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.pre-order-button {
+  background: #e93c3c;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.pre-order-button:hover {
+  background: #c52f2f;
 }
 
 /* ========================= */
-/*     Animation Logic       */
+/* Slider Wrapper             */
+/* ========================= */
+.slider-wrapper {
+  position: relative;
+  margin: 150px 180px   ;  
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Slider container */
+.slider {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 100%;
+}
+
+/* Individual slide */
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 600px; /* adjust height */
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ========================= */
+/* Slider Dots               */
+/* ========================= */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #e93c3c;
+}
+
+/* ========================= */
+/* Slider Arrows             */
+/* ========================= */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.slider-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-arrow.left {
+  left: 20px;
+}
+
+.slider-arrow.right {
+  right: 20px;
+}
+
+/* ========================= */
+/* Fade-in Animations        */
 /* ========================= */
 .fade-item {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
 }
 
 .hero.visible .fade-item {
@@ -28,179 +138,44 @@ body {
   transform: translateY(0);
 }
 
-/* Staggered delays */
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
-.delay-4 { transition-delay: 0.8s; }
+.delay-3 {
+  transition-delay: 0.3s;
+}
 
-/* ========================= */
-/*     Hero Text Styling     */
-/* ========================= */
-.hero-text h2 {
-  max-width: 1000px;
-  margin: 0 auto 20px;
-  font-size: 36px;
-  line-height: 1.6;
-  color: #333;
-  font-weight: 600;
+.delay-4 {
+  transition-delay: 0.4s;
 }
 
 /* ========================= */
-/*     Button Styling        */
+/* Responsive                */
 /* ========================= */
-.button-container {
-  display: inline-flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.play-button,
-.pre-order-button {
-  text-decoration: none;
-  background-color: #e93c3c;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  border-radius: 40px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 200px;
-  height: 60px;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.pre-order-button {
-  background-color: #c32f2f;
-}
-
-.pre-order-button:hover,
-.play-button:hover {
-  background-color: #a82a27;
-}
-
-.play-icon {
-  font-size: 20px;
-}
-
-/* ========================= */
-/* Background image container */
-/* ========================= */
-.hero-content-with-bg {
-  position: relative;
-  margin: 20px 160px;
-  padding: 280px 80px;
-  background-image: url('https://badshahmasala.com/wp-content/uploads/2024/02/HOME-PAGE-BANNER-2048x1152.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ========================= */
-/*     Responsive Styles     */
-/* ========================= */
-
-/* Tablets and below (<=1024px) */
 @media (max-width: 1024px) {
-  .hero-content-with-bg {
-    margin: 20px 40px;
-    padding: 200px 40px;
+  .slider-wrapper {
+    margin: 80px 40px;
   }
 
-  .hero-text h2 {
-    font-size: 28px;
-    line-height: 1.5;
-  }
-
-  .play-button,
-  .pre-order-button {
-    font-size: 16px;
-    min-width: 160px;
-    height: 50px;
-    padding: 12px 24px;
-  }
-
-  .button-container {
-    gap: 12px;
-    flex-wrap: wrap;
+  .slide img {
+    height: 400px;
   }
 }
 
-/* Small tablets / large mobiles (<=768px) */
 @media (max-width: 768px) {
-  .hero {
-    padding: 120px 15px;
+  .slider-wrapper {
+    margin: 40px 20px;
   }
 
-  .hero-content-with-bg {
-    margin: 10px 20px;
-    padding: 140px 20px;
-    border-radius: 16px;
+  .slide img {
+    height: 300px;
   }
 
-  .hero-text h2 {
-    font-size: 22px;
-    line-height: 1.4;
+  .slider-arrow {
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
   }
 
-  .play-button,
   .pre-order-button {
-    font-size: 15px;
-    min-width: 140px;
-    height: 46px;
-    padding: 10px 20px;
-  }
-
-  .button-container {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
-}
-
-/* Mobile phones (<=480px) */
-@media (max-width: 480px) {
-  .hero {
-    padding: 100px 10px 40px;
-  }
-
-  .hero-content-with-bg {
-    margin: 10px 10px;
-    padding: 100px 15px;
-    border-radius: 12px;
-  }
-
-  .hero-text h2 {
-    font-size: 18px;
-    line-height: 1.3;
-    padding: 0 5px;
-  }
-
-  .play-button,
-  .pre-order-button {
+    padding: 10px 22px;
     font-size: 14px;
-    min-width: 120px;
-    height: auto;
-    padding: 12px 20px;
-    border-radius: 30px;
-  }
-
-  .play-icon {
-    font-size: 16px;
-  }
-
-  .button-container {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    align-items: center;
   }
 }

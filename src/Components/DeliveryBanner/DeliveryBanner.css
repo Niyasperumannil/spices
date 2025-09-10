@@ -18,7 +18,7 @@
 .delivery-left-section {
   display: flex;
   align-items: center;
-  background-color: #0f4d3c;
+  background-color: #a20808;
   color: white;
   height: 40px;
   padding: 26px 18px;
@@ -52,7 +52,7 @@
 .icon-slice-bar {
   width: 6px;
   height: 12px;
-  background-color: #0f4d3c;
+  background-color: #4d0f0f;
 }
 
 .vertical-divider-line {

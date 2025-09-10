@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Import Font Awesome CSS
 import "./Reviews.css";
 
 const reviewsData = [
-  { id: 1, text: "The spices are so fresh and aromatic. They remind me of the flavors my grandmother used in her cooking.", author: "Anitha, Kerala" },
-  { id: 2, text: "I love the rich taste these spices add to my curries. The quality is far better than what I used to get in the supermarket.", author: "Rahul, Bangalore" },
-  { id: 3, text: "These spices have transformed the way I cook. The masalas feel authentic and full of flavor.", author: "Fatima, Chennai" },
-  { id: 4, text: "The freshness is unmatched. Every dish feels more vibrant and tasty with these spices.", author: "Joseph, Kochi" },
-  { id: 5, text: "Finally found spices that remind me of home. Fragrant, pure, and absolutely delicious.", author: "Meera, Mumbai" },
+  { image: "/WhatsApp Image 2025-09-09 at 3.31.39 PM.jpeg" },
+  { image: "/WhatsApp Image 2025-09-09 at 3.31.39 PM.jpeg" },
+  { image: "/WhatsApp Image 2025-09-09 at 3.31.39 PM.jpeg" },
+  { image: "/WhatsApp Image 2025-09-09 at 3.31.39 PM.jpeg" },
+  { image: "/WhatsApp Image 2025-09-09 at 3.31.39 PM.jpeg" },
 ];
 
 const Reviews = () => {
@@ -33,23 +34,26 @@ const Reviews = () => {
       <h2 className="reviews-title">CUSTOMER REVIEWS</h2>
       <div className="underline-accent" />
       <p className="reviews-subtitle">
-        Hear from our happy customers who bring authentic flavor to their homes with our spices.
+        Our customers love what we offer! Here's what they're sharing visually.
       </p>
 
       <div className="review-cards-container">
         <div className="review-cards">
-          {/* Duplicate reviews for seamless marquee */}
           {[...reviewsData, ...reviewsData].map((review, index) => (
             <div
-              key={`${review.id}-${index}`}
+              key={`review-${index}`}
               className={`review-card ${visible ? "visible" : "hidden"}`}
               style={{ animationDelay: `${(index + 1) * 0.2}s` }}
             >
-              <div className="quote">“</div>
-              <p className="review-text">{review.text}</p>
-              <div className="review-footer">
-                <div className="avatar">{review.author[0]}</div>
-                <div className="review-author">{review.author}</div>
+              <div className="review-image-wrapper">
+                <img
+                  src={review.image}
+                  alt={`Customer Review ${index + 1}`}
+                  className="review-image"
+                />
+                <div className="instagram-icon">
+                  <i className="fab fa-instagram"></i>
+                </div>
               </div>
             </div>
           ))}

@@ -17,6 +17,7 @@ import AboutCompany from '../../Components/AboutCompany/AboutCompany'
 import DeliveryBanner from '../../Components/DeliveryBanner/DeliveryBanner'
 import OfferBanner from '../../Components/OfferBanner/OfferBanner'
 import TeaSlider from '../../Components/TeaSlider/TeaSlider'
+import AvailableOn from '../../Components/AvailableOn/AvailableOn'
 
 function Hero() {
   return (
@@ -27,13 +28,14 @@ function Hero() {
        {/* <TeaSlider /> */}
       <App />
        {/* <DeliveryBanner /> */}
-
       <ProductSection />
 
 
       <HowItWorks />
       {/* <BenefitsSection /> */}
       <WatchBenefitsSection  />
+            <AvailableOn />
+
       <AboutCompany />
       <MakingProcess />
       {/* <CollectionSection /> */}

@@ -46,8 +46,8 @@
   background: #fff;
   border: 1px solid #eee;
   border-radius: 12px;
-  max-width: 340px;
-  padding: 30px 25px;
+  max-width: 390px;
+  padding: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
@@ -55,6 +55,7 @@
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
   animation-duration: 0.6s;
+  flex: 0 0 auto;
 }
 
 .review-card.visible {
@@ -73,46 +74,38 @@
   }
 }
 
-.quote {
-  font-size: 60px;
-  color: #ccc;
-  margin-bottom: 20px;
+/* Image wrapper + Instagram icon */
+.review-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.review-text {
-  font-size: 18px;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 30px;
+.review-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-.review-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  background: #e93c3c;
-  color: #fff;
+.instagram-icon {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 50%;
+  padding: 8px;
   font-size: 18px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
+  color: #e1306c;
+  transition: transform 0.3s ease;
+  z-index: 2;
 }
 
-.review-author {
-  font-size: 16px;
-  font-weight: bold;
-  color: #e93c3c;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.review-image-wrapper:hover .instagram-icon {
+  transform: translateX(-50%) scale(1.2);
 }
 
 /* ========================= */
@@ -135,26 +128,7 @@
   }
 
   .review-card {
-    padding: 25px 20px;
     max-width: 300px;
-  }
-
-  .quote {
-    font-size: 50px;
-  }
-
-  .review-text {
-    font-size: 16px;
-  }
-
-  .review-author {
-    font-size: 15px;
-  }
-
-  .avatar {
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
   }
 }
 
@@ -174,27 +148,7 @@
   }
 
   .review-card {
-    padding: 20px 15px;
     max-width: 90%;
-    flex: 0 0 auto;
-  }
-
-  .quote {
-    font-size: 40px;
-  }
-
-  .review-text {
-    font-size: 15px;
-  }
-
-  .review-author {
-    font-size: 14px;
-  }
-
-  .avatar {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
   }
 
   .review-cards {
@@ -203,8 +157,12 @@
   }
 
   @keyframes marquee-mobile {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -216,11 +174,11 @@
   }
 
   @keyframes marquee-desktop {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .review-card {
-    flex: 0 0 auto;
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
