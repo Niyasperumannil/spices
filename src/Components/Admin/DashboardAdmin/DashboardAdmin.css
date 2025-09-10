@@ -3,7 +3,7 @@
 .dashboard-container {
   display: flex;
   height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family:  'Poppins', sans-serif;
 }
 
 /* Sidebar styles */
