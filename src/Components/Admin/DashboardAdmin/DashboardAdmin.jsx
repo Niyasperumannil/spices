@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './DashboardAdmin.css';
 import ImageGallery from '../../Admin/ImageGallery/ImageGallery'
 import ImageSlider from '../../Admin/ImageSlider/ImageSlider' 
+import ReviewImageGallery from '../ReviewImageGallery/ReviewImageGallery';
 
 function AdminDashboard() {
   const [activeSection, setActiveSection] = useState('Slider');
@@ -17,8 +18,12 @@ function AdminDashboard() {
           </div>
         );
       case 'Reviews':
-        return <h2>Customer Reviews</h2>;
-      case 'FAQ':
+ return (
+          <div>
+            <h2>Reviews</h2>
+           <ReviewImageGallery />
+          </div>
+        );      case 'FAQ':
         return <h2>FAQ Questions</h2>;
       default:
         return <h2>Welcome</h2>;
