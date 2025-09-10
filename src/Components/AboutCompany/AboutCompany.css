@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1px 50px 0px 0px;
+  padding: 2px 50px 0px 0px;
   background: #e90d0d url('https://www.transparenttextures.com/patterns/white-wall.png');
   background-size: cover;
   color: #fff;
