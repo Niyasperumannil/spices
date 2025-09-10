@@ -75,39 +75,10 @@ const Reviews = () => {
           ))}
 
           {/* Card inside another card */}
-          {/* <div
-            className={`review-card nested-card-wrapper ${visible ? "visible" : "hidden"}`}
-            style={{ animationDelay: `${(reviewsData.length + 2) * 0.2}s` }}
-          >
-            <div className="nested-inner-card">
-              <h4>Nested Card</h4>
-              <p>This card is inside another card.</p>
-              <i className="fas fa-star" style={{ color: "#f5b50a", marginRight: "4px" }}></i>
-              <i className="fas fa-star" style={{ color: "#f5b50a", marginRight: "4px" }}></i>
-              <i className="fas fa-star" style={{ color: "#f5b50a", marginRight: "4px" }}></i>
-              <i className="fas fa-star" style={{ color: "#f5b50a", marginRight: "4px" }}></i>
-              <i className="far fa-star" style={{ color: "#f5b50a" }}></i>
-            </div>
-          </div> */}
+       
 
           {/* Insert Image Card */}
-          {/* <div
-            className={`review-card insert-card ${visible ? "visible" : "hidden"}`}
-            style={{ animationDelay: `${(reviewsData.length + 3) * 0.2}s` }}
-            onClick={() => document.getElementById("image-upload-input").click()}
-          >
-            <div className="insert-content">
-              <i className="fas fa-plus-circle insert-icon"></i>
-              <p>Insert Image</p>
-            </div>
-            <input
-              type="file"
-              id="image-upload-input"
-              style={{ display: "none" }}
-              accept="image/*"
-              onChange={handleImageInsert}
-            />
-          </div> */}
+     
         </div>
       </div>
     </section>
