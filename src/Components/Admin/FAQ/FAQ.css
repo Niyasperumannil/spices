@@ -1,16 +1,16 @@
-/* FAQ Container */
-.faq-container {
+/* Asked Questions Container */
+.askedquestions-container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
 }
 
-/* FAQ Title */
-.faq-title {
+/* Asked Questions Title */
+.askedquestions-title {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -18,22 +18,22 @@
   text-align: center;
 }
 
-/* FAQ List */
-.faq-list {
+/* Asked Questions List */
+.askedquestions-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* FAQ Item */
-.faq-item {
+/* Asked Questions Item */
+.askedquestions-item {
   margin-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
 
-/* FAQ Question */
-.faq-question {
+/* Asked Questions Question */
+.askedquestions-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,53 +44,35 @@
   transition: color 0.3s ease;
 }
 
-.faq-question:hover {
+.askedquestions-question:hover {
   color: #0056b3;
 }
 
-/* Toggle Icon */
-.faq-toggle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #007bff;
-  transition: transform 0.3s ease;
-}
-
-/* FAQ Answer */
-.faq-answer {
+/* Asked Questions Answer */
+.askedquestions-answer {
   padding: 10px 0;
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
-  display: none;
 }
 
-/* Active FAQ Answer */
-.faq-item.open .faq-answer {
-  display: block;
-}
-
-.faq-item.open .faq-toggle {
-  transform: rotate(45deg);
-}
-
-/* Admin Panel */
-.admin-panel {
+/* Asked Questions Admin Panel */
+.askedquestions-admin-panel {
   margin-top: 30px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.admin-panel h3 {
+.askedquestions-admin-panel h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #333;
 }
 
-.admin-panel input,
-.admin-panel textarea {
+.askedquestions-admin-panel input,
+.askedquestions-admin-panel textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -101,7 +83,7 @@
   box-sizing: border-box;
 }
 
-.admin-panel button {
+.askedquestions-admin-panel button {
   width: 100%;
   padding: 12px;
   background-color: #007bff;
@@ -113,6 +95,6 @@
   transition: background-color 0.3s ease;
 }
 
-.admin-panel button:hover {
+.askedquestions-admin-panel button:hover {
   background-color: #0056b3;
 }

@@ -70,22 +70,22 @@ const FAQ = () => {
   };
 
   return (
-    <div className="faq-container">
-      <h2 className="faq-title">Reviews</h2>
-      <div className="faq-list">
+    <div className="askedquestions-container">
+      <h2 className="askedquestions-title">Reviews</h2>
+      <div className="askedquestions-list">
         {reviews.map((review) => (
-          <div key={review._id} className="faq-item">
-            <div className="faq-question">
+          <div key={review._id} className="askedquestions-item">
+            <div className="askedquestions-question">
               <span>{review.title}</span>
               <button onClick={() => handleEditReview(review)}>Edit</button>
               <button onClick={() => handleDeleteReview(review._id)}>Delete</button>
             </div>
-            <div className="faq-answer">{review.paragraph}</div>
+            <div className="askedquestions-answer">{review.paragraph}</div>
           </div>
         ))}
       </div>
 
-      <div className="admin-panel">
+      <div className="askedquestions-admin-panel">
         <h3>{editReview ? 'Edit Review' : 'Add New Review'}</h3>
         <form onSubmit={editReview ? handleUpdateReview : handleAddReview}>
           <input
