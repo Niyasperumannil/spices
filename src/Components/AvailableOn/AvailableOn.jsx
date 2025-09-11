@@ -9,7 +9,7 @@ import "./AvailableOn.css";
 const AvailableOn = () => {
   return (
     <section className="available-section">
-      <p className="available-text">Our products are also available in</p>
+      <p className="available-text">available in</p>
       <div className="available-logos">
         <img src="https://www.nirapara.com/image/index/Amazon.png" alt="Amazon" />
         <img src="https://www.nirapara.com/image/index/Flipkart.png" alt="Flipkart" />

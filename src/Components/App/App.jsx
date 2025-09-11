@@ -118,27 +118,37 @@ function App() {
           }}
           onTransitionEnd={handleTransitionEnd}
         >
-          {extendedImages.map((img, idx) => (
-            <div className="slide" key={idx}>
-              <img
-                src={`http://localhost:5005${img.imageUrl}`}
-                alt={`slide-${idx}`}
-              />
-            </div>
-          ))}
+          {extendedImages.map((img, idx) => {
+            const uniqueId = img._id || img.id || `img-${idx}`;
+            return (
+              <div className="slide" key={`slide-${uniqueId}-${idx}`}>
+                <img
+                  src={`http://localhost:5005${img.imageUrl}`}
+                  alt={`slide-${idx}`}
+                />
+              </div>
+            );
+          })}
         </div>
 
         {/* Navigation Dots */}
         <div className="slider-dots">
-          {images.map((_, idx) => (
-            <span
-              key={idx}
-              className={`dot ${idx === currentIndex - 1 ? "active" : ""}`}
-              onClick={() => setCurrentIndex(idx + 1)}
-            />
-          ))}
+          {images.map((img, idx) => {
+            const uniqueId = img._id || img.id || `dot-${idx}`;
+            return (
+              <span
+                key={`dot-${uniqueId}`}
+                className={`dot ${idx === currentIndex - 1 ? "active" : ""}`}
+                onClick={() => setCurrentIndex(idx + 1)}
+              />
+            );
+          })}
         </div>
       </div>
+
+      {/* Optional Prev/Next Buttons if desired */}
+      {/* <button className="slider-arrow left" onClick={handlePrev}>‹</button>
+      <button className="slider-arrow right" onClick={handleNext}>›</button> */}
     </div>
   );
 }

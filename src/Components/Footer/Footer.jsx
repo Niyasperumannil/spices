@@ -6,7 +6,8 @@ import {
   FaLinkedinIn,
   FaYoutube,
   FaGooglePlusG,
-  FaPinterestP
+  FaPinterestP,
+  FaInstagram
 } from 'react-icons/fa';
 
 const Footer = () => {
@@ -38,16 +39,13 @@ const Footer = () => {
         <a href="#"><FaTwitter /></a>
         <a href="#"><FaLinkedinIn /></a>
         <a href="#"><FaYoutube /></a>
-        <a href="#"><FaGooglePlusG /></a>
-        <a href="#"><FaPinterestP /></a>
+        <a href="#"><FaInstagram /></a>
       </div>
 
       <ul className="footer-links">
         <li><a href="#">About</a></li>
         <li><a href="#">Terms of Use</a></li>
         <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Mobile App</a></li>
-        <li><a href="#">PressKit</a></li>
       </ul>
 
       <p className="footer-copy">

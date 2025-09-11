@@ -1,28 +1,35 @@
+/* =========== Base / Mobile-First Styles =========== */
+
 .available-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
-  padding: 40px 20px;
-  background: #fff;
+  gap: 1.5rem; /* ~24px */
+  padding: 2rem 1rem; /* ~32px top/bottom, ~16px sides */
+  background-color: #fff;
   font-family: 'Poppins', sans-serif;
+  text-align: center; /* center text on small screens */
 }
 
 .available-text {
-  font-size: 25px;
+  font-size: 1.5rem; /* ~24px */
   color: #222;
-  font-weight: 200;
+  font-weight: 300;
   white-space: nowrap;
+  margin: 0; /* reset margins if any */
 }
 
 .available-logos {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 90px;
+  gap: 1.5rem; /* ~24px */
 }
 
 .available-logos img {
-  height: 60px;
+  height: 3rem; /* ~48px */
+  max-width: 100%;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -32,21 +39,44 @@
   transform: scale(1.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .available-section {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
+/* =========== Medium Devices / Tablets =========== */
 
-  .available-logos {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+@media (min-width: 600px) {
+  .available-section {
+    padding: 3rem 2rem; /* more breathing space on tablets */
+  }
+  
+  .available-text {
+    font-size: 2rem; /* ~32px */
   }
 
   .available-logos img {
-    height: 30px;
+    height: 4rem; /* ~64px */
+  }
+}
+
+/* =========== Large Devices / Desktops =========== */
+
+@media (min-width: 1024px) {
+  .available-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* center container */
+    padding: 4rem 2rem;
+  }
+
+  .available-text {
+    font-size: 2.5rem; /* ~40px */
+    margin-right: 2rem;
+  }
+
+  .available-logos {
+    gap: 4rem; /* ~64px */
+  }
+
+  .available-logos img {
+    height: 5rem; /* ~80px */
   }
 }
