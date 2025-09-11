@@ -50,10 +50,22 @@
 
 /* Asked Questions Answer */
 .askedquestions-answer {
-  padding: 10px 0;
-  font-size: 1rem;
+  /* Hidden by default */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   color: #555;
+  font-size: 1rem;
   line-height: 1.6;
+  padding: 0 0; /* no vertical padding when hidden */
+}
+
+/* When answer is visible */
+.askedquestions-item.open .askedquestions-answer {
+  max-height: 500px; /* or something large enough to hold your content */
+  opacity: 1;
+  padding: 10px 0; /* add vertical padding when visible */
 }
 
 /* Asked Questions Admin Panel */
@@ -98,3 +110,4 @@
 .askedquestions-admin-panel button:hover {
   background-color: #0056b3;
 }
+    
