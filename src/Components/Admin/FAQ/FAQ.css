@@ -1,4 +1,6 @@
+/* ========================= */
 /* Asked Questions Container */
+/* ========================= */
 .askedquestions-container {
   max-width: 800px;
   margin: 20px auto;
@@ -30,6 +32,16 @@
   margin-bottom: 15px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Open state for accordion */
+.askedquestions-item.open {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 15px 10px;
 }
 
 /* Asked Questions Question */
@@ -50,25 +62,25 @@
 
 /* Asked Questions Answer */
 .askedquestions-answer {
-  /* Hidden by default */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   color: #555;
   font-size: 1rem;
   line-height: 1.6;
-  padding: 0 0; /* no vertical padding when hidden */
+  padding: 0;
 }
 
-/* When answer is visible */
 .askedquestions-item.open .askedquestions-answer {
-  max-height: 500px; /* or something large enough to hold your content */
+  max-height: 500px; /* adjust according to content */
   opacity: 1;
-  padding: 10px 0; /* add vertical padding when visible */
+  padding: 10px 0;
 }
 
-/* Asked Questions Admin Panel */
+/* ========================= */
+/* Admin Panel (Edit/Add)    */
+/* ========================= */
 .askedquestions-admin-panel {
   margin-top: 30px;
   padding: 20px;
@@ -83,6 +95,7 @@
   color: #333;
 }
 
+/* Inputs and Textarea */
 .askedquestions-admin-panel input,
 .askedquestions-admin-panel textarea {
   width: 100%;
@@ -93,8 +106,17 @@
   font-size: 1rem;
   color: #333;
   box-sizing: border-box;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
+.askedquestions-admin-panel input:focus,
+.askedquestions-admin-panel textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* Buttons */
 .askedquestions-admin-panel button {
   width: 100%;
   padding: 12px;
@@ -104,10 +126,108 @@
   border-radius: 4px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .askedquestions-admin-panel button:hover {
   background-color: #0056b3;
+  transform: scale(1.02);
 }
-    
+
+/* Edit/Delete Buttons in List */
+.askedquestions-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.askedquestions-actions button {
+  background-color: #e93c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.askedquestions-actions button:hover {
+  background-color: #c52f2f;
+  transform: scale(1.05);
+}
+
+/* Save/Cancel Buttons for Editing */
+.askedquestions-edit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.askedquestions-edit-buttons button:first-child {
+  background-color: #28a745;
+}
+
+.askedquestions-edit-buttons button:first-child:hover {
+  background-color: #218838;
+}
+
+.askedquestions-edit-buttons button:last-child {
+  background-color: #6c757d;
+}
+
+.askedquestions-edit-buttons button:last-child:hover {
+  background-color: #495057;
+}
+
+/* Input/textarea for edit inline */
+.askedquestions-edit input,
+.askedquestions-edit textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.askedquestions-edit textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ========================= */
+/* Responsive                */
+/* ========================= */
+@media (max-width: 768px) {
+  .askedquestions-container {
+    padding: 15px;
+  }
+
+  .askedquestions-title {
+    font-size: 1.6rem;
+  }
+
+  .askedquestions-question {
+    font-size: 1rem;
+  }
+
+  .askedquestions-answer {
+    font-size: 0.95rem;
+  }
+
+  .askedquestions-admin-panel h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .askedquestions-actions,
+  .askedquestions-edit-buttons {
+    flex-direction: column;
+  }
+
+  .askedquestions-actions button,
+  .askedquestions-edit-buttons button {
+    width: 100%;
+  }
+}

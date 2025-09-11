@@ -1,33 +1,27 @@
 import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
 import "./FaqSection.css";
 
-const faqItems = [
-  {
-    question: "Where do your spices come from?",
-    answer:
-      "Our spices are sourced directly from trusted local farmers across Kerala and other spice-growing regions of India. Each batch is carefully handpicked to ensure maximum freshness and flavor.",
-  },
-  {
-    question: "Are your spices 100% natural?",
-    answer:
-      "Yes. We believe in purity and quality — our spices are free from artificial colors, preservatives, and additives. What you get is just the authentic, natural taste of spices.",
-  },
-  {
-    question: "How should I store the spices?",
-    answer:
-      "To keep the spices fresh for longer, store them in an airtight container, away from direct sunlight and moisture. This will help preserve their aroma and flavor.",
-  },
-  {
-    question: "Do you offer custom spice blends?",
-    answer:
-      "Absolutely! Along with traditional masalas like garam masala and sambar powder, we also create custom blends tailored to your taste or family recipes. You can contact us for bulk or personalized orders.",
-  },
-];
-
 const FaqSection = () => {
+  const [faqItems, setFaqItems] = useState([]);
   const [visibleItems, setVisibleItems] = useState([]);
   const containerRef = useRef(null);
 
+  // Fetch FAQs (reviews used as FAQs in your backend)
+  const fetchReviews = async () => {
+    try {
+      const response = await axios.get("http://localhost:5005/api/reviews");
+      setFaqItems(response.data); // expects array: [{ _id, title, paragraph }]
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
+
+  // Intersection Observer for fade-in animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -45,10 +39,8 @@ const FaqSection = () => {
       observer.observe(containerRef.current);
     }
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+    return () => observer.disconnect();
+  }, [faqItems]);
 
   return (
     <section className="faq-section" id="faq" ref={containerRef}>
@@ -60,16 +52,22 @@ const FaqSection = () => {
       </p>
 
       <div className="faq-grid">
-        {faqItems.map((item, index) => (
-          <div
-            key={index}
-            className={`faq-item ${visibleItems.includes(index) ? "visible" : "hidden"}`}
-            style={{ animationDelay: `${index * 0.3}s` }}
-          >
-            <h3>{item.question}</h3>
-            <p>{item.answer}</p>
-          </div>
-        ))}
+        {faqItems.length > 0 ? (
+          faqItems.map((item, index) => (
+            <div
+              key={item._id || index}
+              className={`faq-item ${
+                visibleItems.includes(index) ? "visible" : "hidden"
+              }`}
+              style={{ animationDelay: `${index * 0.3}s` }}
+            >
+              <h3>{item.title}</h3>
+              <p>{item.paragraph}</p>
+            </div>
+          ))
+        ) : (
+          <p>No FAQs available at the moment.</p>
+        )}
       </div>
     </section>
   );
