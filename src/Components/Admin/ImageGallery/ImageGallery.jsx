@@ -43,8 +43,8 @@ function ImageGallery() {
                 alt="Uploaded"
                 className="gallery-image"
               />
-              <button className="delete-button" onClick={() => handleDelete(img._id)}>
-                🗑️
+           <button className="delete-button" onClick={() => handleDelete(img._id)}>
+                ✖
               </button>
             </div>
           ))}
