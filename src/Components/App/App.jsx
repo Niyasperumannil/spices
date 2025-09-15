@@ -15,7 +15,7 @@ function App() {
     const fetchImages = async () => {
       try {
         const res = await axios.get("http://localhost:5005/api/images");
-        setImages(res.data);
+        setImages(res.data || []);
       } catch (err) {
         console.error("Failed to load images:", err);
       }
@@ -23,11 +23,14 @@ function App() {
     fetchImages();
   }, []);
 
-  // Clone first and last for infinite loop
-  const extendedImages =
-    images.length > 0
-      ? [images[images.length - 1], ...images, images[0]]
-      : [];
+  // Extended images for infinite loop (clone first & last)
+  const extendedImages = images.length > 0
+    ? [
+        { ...images[images.length - 1], cloneType: "lastClone", originalIdx: images.length - 1 },
+        ...images.map((img, idx) => ({ ...img, cloneType: "original", originalIdx: idx })),
+        { ...images[0], cloneType: "firstClone", originalIdx: 0 }
+      ]
+    : [];
 
   // Resize detection
   useEffect(() => {
@@ -62,23 +65,27 @@ function App() {
       handleNext();
     }, 4000);
     return () => clearInterval(interval);
-  }, [currentIndex, images]);
+  }, [currentIndex, images]); // possibly also transitionEnabled, but this should work
 
-  // Handle transition end
+  // Handle transition end to “wrap around”
   const handleTransitionEnd = () => {
     if (currentIndex === extendedImages.length - 1) {
+      // we've reached the clone of first image
       setTransitionEnabled(false);
       setCurrentIndex(1);
-    }
-    if (currentIndex === 0) {
+    } else if (currentIndex === 0) {
+      // we've reached the clone of last image
       setTransitionEnabled(false);
       setCurrentIndex(images.length);
     }
   };
 
+  // Re-enable transition after jump without animation
   useEffect(() => {
     if (!transitionEnabled) {
-      const timeout = setTimeout(() => setTransitionEnabled(true), 50);
+      const timeout = setTimeout(() => {
+        setTransitionEnabled(true);
+      }, 50);
       return () => clearTimeout(timeout);
     }
   }, [transitionEnabled]);
@@ -119,9 +126,11 @@ function App() {
           onTransitionEnd={handleTransitionEnd}
         >
           {extendedImages.map((img, idx) => {
-            const uniqueId = img._id || img.id || `img-${idx}`;
+            // originalIdx is stable for original items; cloneType distinguishes clones
+            const baseId = img._id ?? img.id ?? `no-id-${img.originalIdx}`;
+            const key = `slide-${baseId}-${img.cloneType}-${idx}`;
             return (
-              <div className="slide" key={`slide-${uniqueId}-${idx}`}>
+              <div className="slide" key={key}>
                 <img
                   src={`http://localhost:5005${img.imageUrl}`}
                   alt={`slide-${idx}`}
@@ -134,21 +143,26 @@ function App() {
         {/* Navigation Dots */}
         <div className="slider-dots">
           {images.map((img, idx) => {
-            const uniqueId = img._id || img.id || `dot-${idx}`;
+            const baseId = img._id ?? img.id ?? `no-id-${idx}`;
+            const key = `dot-${baseId}-${idx}`;
+            // dot corresponds to original slide (excluding clones), so active when idx === currentIndex - 1
+            const isActive = idx === currentIndex - 1;
             return (
               <span
-                key={`dot-${uniqueId}`}
-                className={`dot ${idx === currentIndex - 1 ? "active" : ""}`}
-                onClick={() => setCurrentIndex(idx + 1)}
+                key={key}
+                className={`dot ${isActive ? "active" : ""}`}
+                onClick={() => {
+                  setCurrentIndex(idx + 1);
+                }}
               />
             );
           })}
         </div>
-      </div>
 
-      {/* Optional Prev/Next Buttons if desired */}
-      {/* <button className="slider-arrow left" onClick={handlePrev}>‹</button>
-      <button className="slider-arrow right" onClick={handleNext}>›</button> */}
+        {/* Optional Prev/Next Buttons if desired */}
+        {/* <button className="slider-arrow left" onClick={handlePrev}>‹</button> */}
+        {/* <button className="slider-arrow right" onClick={handleNext}>›</button> */}
+      </div>
     </div>
   );
 }
