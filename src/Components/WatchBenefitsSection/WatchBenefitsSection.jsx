@@ -91,7 +91,6 @@ const WatchFeatures = () => {
         visibleItems.includes(item.id) ? "visible" : "hidden"
       }`}
     >
-      {/* Icon on top */}
       <div className="feature-icon">{item.icon}</div>
       <div className="feature-content">
         <h3 className="feature-title">{item.title}</h3>
@@ -102,6 +101,14 @@ const WatchFeatures = () => {
 
   return (
     <section className="watch-features" ref={sectionRef}>
+      {/* New Header */}
+      <div className="features-header">
+        <h2 className="features-title">Why Choose Our Masala</h2>
+        <p className="features-subtitle">
+          Experience the taste, aroma, and health in every pinch.
+        </p>
+      </div>
+
       <div className="feature-wrapper">
         <div className="feature-row top">
           {renderFeature(allFeatures[0])}

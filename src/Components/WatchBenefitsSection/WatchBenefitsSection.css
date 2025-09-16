@@ -5,6 +5,26 @@
   position: relative;
 }
 
+/* New header styles */
+.features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.features-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 10px 0 0 0;
+}
+
+/* Existing wrapper & feature items */
 .feature-wrapper {
   display: flex;
   flex-direction: column;
@@ -46,8 +66,8 @@
 /* Feature items */
 .feature-item {
   display: flex;
-  flex-direction: column; /* icon top */
-  align-items: center;    /* center icon & text */
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
   text-align: center;
   opacity: 0;
@@ -66,21 +86,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* remove margin-bottom */
 }
 
 .feature-title {
   font-size: 25px;
   font-weight: 500;
   color: #333;
-  margin: 0; /* remove existing margin-bottom */
+  margin: 0;
 }
 
 .feature-text {
   font-size: 15px;
   color: #666;
   line-height: 1.4;
-  margin: 0; /* remove existing margin */
+  margin: 0;
 }
 
 /* Image */
@@ -104,6 +123,18 @@
 @media (max-width: 1024px) {
   .watch-features {
     padding: 60px 60px;
+  }
+
+  .features-header {
+    margin-bottom: 40px;
+  }
+
+  .features-title {
+    font-size: 32px;
+  }
+
+  .features-subtitle {
+    font-size: 16px;
   }
 
   .feature-row {
@@ -142,6 +173,14 @@
     padding: 40px 20px;
   }
 
+  .features-title {
+    font-size: 28px;
+  }
+
+  .features-subtitle {
+    font-size: 15px;
+  }
+
   .feature-title {
     font-size: 20px;
   }
@@ -169,6 +208,14 @@
 @media (max-width: 480px) {
   .watch-features {
     padding: 30px 10px;
+  }
+
+  .features-title {
+    font-size: 24px;
+  }
+
+  .features-subtitle {
+    font-size: 14px;
   }
 
   .feature-title {
