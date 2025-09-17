@@ -3,8 +3,9 @@
 /* ========================= */
 .how-it-works {
   text-align: center;
-  padding: 50px 20px 0;
+  padding: 50px 50px 80px 50px;
   font-family: "Arial", sans-serif;
+  background-color: #f6f1f1;
 }
 
 .how-title {

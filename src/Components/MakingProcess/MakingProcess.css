@@ -90,12 +90,19 @@
 
 .icon-item span {
   display: block;
-  font-size: 14px;
-  font-weight: 540;
+  font-size: bold;
+  /* font-weight: 540; */
   color: #1f0f0f;
   line-height: 1.4;
-  max-width: 100px;
-  word-break: break-word;
+  max-width: 450px;
+  /* word-break: break-word; */
+}
+.icon-item span.one-line {
+  display: inline-block;    /* so it behaves more like an inline element but can have width, etc. */
+  white-space: nowrap;
+font-size: bold; 
+ margin-right: -100px       /* or whichever “boldness” you want */
+  /* other styles you had */
 }
 
 /* ========================= */
