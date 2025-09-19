@@ -34,7 +34,6 @@ const HowItWorks = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Animate steps one by one with delay when component comes into view
             steps.forEach((step, index) => {
               setTimeout(() => {
                 setVisibleSteps((prev) => {
@@ -43,15 +42,15 @@ const HowItWorks = () => {
                   }
                   return prev;
                 });
-              }, index * 500); // 500ms delay between steps
+              }, index * 500); 
             });
-            observer.disconnect(); // Stop observing after animation triggered
+            observer.disconnect(); 
           }
         });
       },
       {
         root: null,
-        threshold: 0.1, // Trigger when 10% visible
+        threshold: 0.1, 
       }
     );
 
