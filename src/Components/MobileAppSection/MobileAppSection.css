@@ -21,7 +21,6 @@
   animation-name: none;
 }
 
-/* When visible, trigger animation */
 .app-image.visible {
   animation-name: fadeSlideUp;
   animation-delay: 0.2s;

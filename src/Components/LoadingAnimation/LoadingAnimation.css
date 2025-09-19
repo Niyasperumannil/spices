@@ -7,7 +7,6 @@ body, html, .App {
   background: white;
 }
 
-/* Loading Animation Container */
 .loading-container {
   display: flex;
   justify-content: center;
